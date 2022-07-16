@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\SongController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/test',[UserController::class, 'authWithGoogle']);
+Route::get('/auth/google/callback',[UserController::class,'authCallback']);
